@@ -27,7 +27,7 @@ function App() {
     try {
       // await axios.put(`http://localhost:5000/todos/${todoId}`);
       await axios.put(
-        `https://todo-list-api-five.vercel.app/localhost:50/todos/${todoId}`
+        `https://todo-list-api-five.vercel.app/todos/${todoId}`
       );
       dispatch(toggleComplete(todoId));
     } catch (error) {
@@ -39,7 +39,7 @@ function App() {
     try {
       // await axios.delete(`http://localhost:5000/todos/${todoIdd}`);
       await axios.delete(
-        `https://todo-list-api-five.vercel.app//todos/${todoIdd}`
+        `https://todo-list-api-five.vercel.app/todos/${todoIdd}`
       );
       dispatch(removeTodo(todoIdd));
     } catch (error) {
