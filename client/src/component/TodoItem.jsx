@@ -1,11 +1,10 @@
-
 import React from "react";
 
 const TodoItem = ({ todo, handleComplete, handleDelete }) => {
   return (
     <div className={`bg-slate-500 flex items-center p-3 my-3`}>
       <div className="flex w-full">
-        <div className="mr-2 md:mr-8 flex-shrink-0">
+        <div className="flex-shrink-0">
           <div>
             <h1
               className={`text-3xl font-bold text-amber-400 ${
@@ -21,7 +20,7 @@ const TodoItem = ({ todo, handleComplete, handleDelete }) => {
             </h1>
           </div>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 ml-auto">
           <button
             onClick={() => handleComplete(todo._id)}
             className="p-1 text-green-500 bg-white border border-green-500 rounded-3xl hover:bg-green-500 duration-300 hover:text-white"

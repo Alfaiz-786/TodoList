@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useFormik } from "formik";
 import { todoSchema } from "../schema";
@@ -11,7 +10,7 @@ const TodoForm = ({ onSubmit }) => {
 
   const { values, handleChange, handleSubmit, errors, touched } = useFormik({
     initialValues: initialValues,
-    validationSchema:todoSchema,
+    validationSchema: todoSchema,
     onSubmit: (values, action) => {
       onSubmit(values, action);
     },

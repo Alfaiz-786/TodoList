@@ -25,10 +25,10 @@ function App() {
 
   const handleComplete = async (todoId) => {
     try {
-      // await axios.put(`http://localhost:5000/todos/${todoId}`);
-      await axios.put(
-        `https://todo-list-api-five.vercel.app/todos/${todoId}`
-      );
+      await axios.put(`http://localhost:5000/todos/${todoId}`);
+      // await axios.put(
+      //   `https://todo-list-api-five.vercel.app/todos/${todoId}`
+      // );
       dispatch(toggleComplete(todoId));
     } catch (error) {
       console.error(error);
@@ -37,10 +37,10 @@ function App() {
 
   const handleDelete = async (todoIdd) => {
     try {
-      // await axios.delete(`http://localhost:5000/todos/${todoIdd}`);
-      await axios.delete(
-        `https://todo-list-api-five.vercel.app/todos/${todoIdd}`
-      );
+      await axios.delete(`http://localhost:5000/todos/${todoIdd}`);
+      // await axios.delete(
+      //   `https://todo-list-api-five.vercel.app/todos/${todoIdd}`
+      // );
       dispatch(removeTodo(todoIdd));
     } catch (error) {
       console.error(error);
@@ -49,17 +49,17 @@ function App() {
 
   const handleAddTodo = async (values, action) => {
     try {
-      // const response = await axios.post("http://localhost:5000/todos", {
-      //   name: values.name,
-      //   discription: values.description,
-      // });
-      const response = await axios.post(
-        "https://todo-list-api-five.vercel.app/todos",
-        {
-          name: values.name,
-          discription: values.description,
-        }
-      );
+      const response = await axios.post("http://localhost:5000/todos", {
+        name: values.name,
+        discription: values.description,
+      });
+      // const response = await axios.post(
+      //   "https://todo-list-api-five.vercel.app/todos",
+      //   {
+      //     name: values.name,
+      //     discription: values.description,
+      //   }
+      // );
       dispatch(todoAdd(response.data));
       action.resetForm();
     } catch (error) {

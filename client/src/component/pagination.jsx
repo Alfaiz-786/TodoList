@@ -1,28 +1,28 @@
-
 import React from "react";
 
 const Pagination = ({ currentPage, totalPages, onPrevious, onNext }) => {
+  const hasPrevious = currentPage > 1;
+  const hasNext = currentPage < totalPages;
+
   return (
     <div className="flex justify-center mt-4">
-      <button
-        onClick={onPrevious}
-        disabled={currentPage === 1}
-        className={`bg-gray-500 px-4 py-2 rounded-l cursor-pointer ${
-          currentPage === 1 ? "cursor-not-allowed" : ""
-        }`}
-      >
-        Previous
-      </button>
-      <span className="mx-4">Page {currentPage}</span>
-      <button
-        onClick={onNext}
-        disabled={currentPage === totalPages}
-        className={`bg-gray-500 px-4 py-2 rounded-r cursor-pointer ${
-          currentPage === totalPages ? "cursor-not-allowed" : ""
-        }`}
-      >
-        Next
-      </button>
+      {hasPrevious && (
+        <button
+          onClick={onPrevious}
+          className="flex  mr-2 items-center mt-4 md:mt-0 text-white bg-amber-400 rounded-3xl px-4 hover:bg-amber-700 duration-300"
+        >
+          Previous
+        </button>
+      )}
+      <span className="flex items-center text-white  ">Page {currentPage}</span>
+      {hasNext && (
+        <button
+          onClick={onNext}
+          className="flex  ml-2 items-center mt-4 md:mt-0 text-white bg-amber-400 rounded-3xl px-4 hover:bg-amber-700 duration-300"
+        >
+          Next
+        </button>
+      )}
     </div>
   );
 };
